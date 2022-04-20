@@ -11,9 +11,10 @@ setMethod("hwe",
           "SeqVarGDSClass",
           function(gdsobj, permute=FALSE, parallel=FALSE) {
               counts <- .countGenotypes(gdsobj, permute, parallel=parallel)
-
+              counts2 <- counts
+              names(counts2) <- c"AA","AB","BB")
               afreq <- (2*counts$nAA + counts$nAa) / (2*rowSums(counts))
-              p <- HWExact(counts)
+              p <- HWExactStats(counts2)
               f <- .f(counts)
 
               ## set non-biallelic or monomorphic variants to NA

@@ -16,7 +16,7 @@ importFrom(GenomicRanges, GRanges, GRangesList, seqnames)
 import(Biobase)
 import(logistf)
 import(data.table)
-importFrom(GWASExactHW, HWExact)
+importFrom(HardyWeinberg, HWExactStats)
 importFrom(Matrix, Matrix)
 
 exportClasses(SeqVarData,
